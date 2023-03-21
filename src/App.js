@@ -1,23 +1,33 @@
-import logo from './logo.svg';
 import './App.css';
-
+import Leaderboard from './pages/Leaderboard';
 function App() {
+  //this is an array of obejcts, we will use it to dynamically render users and their points to the screen
+  const competitors = [
+    {
+      name: "asa",
+      points: 10,
+    },
+    {
+      name: "meli",
+      points: 15,
+    },
+    {
+      name: "alexiana",
+      points: 34,
+    },
+    {
+      name: "eyerusalem",
+      points: 24,
+    },
+    {
+      name: "dipin",
+      points: 4,
+    },
+  ];
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+       { /*this is where the props is being called. notice the name is competitors */}
+      <Leaderboard competitors={competitors} />
     </div>
   );
 }
